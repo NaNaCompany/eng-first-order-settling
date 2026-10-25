@@ -1,0 +1,47 @@
+{
+  "id": "E049",
+  "title": "1차계 정착시간 계산기",
+  "inputs_text": "시정수 τ [s], 허용 잔류오차 비율 ε [0~1]",
+  "formula": "t_s = −τ ln(ε)",
+  "output_text": "허용오차에 도달하는 정착시간 t_s [s]",
+  "assumptions": "τ>0, 0<ε<1. 순수 지연·오버슈트 없는 안정 1차 단위계단 응답의 정확식이다. 2% 입력은 ε=0.02로 처리하며 다중 극점계에 무조건 4τ를 적용하지 않는다.",
+  "purpose": "1차계 정착시간 계산 / 센서·공정 응답 대기시간",
+  "sources": [
+    {
+      "label": "MIT OCW · First Order Systems",
+      "url": "https://ocw.mit.edu/courses/2-003-modeling-dynamics-and-control-i-spring-2005/12904eb02b9e301f891c12c7b26226be_archive.pdf"
+    },
+    {
+      "label": "OpenStax · RC Circuits",
+      "url": "https://openstax.org/books/university-physics-volume-2/pages/10-5-rc-circuits"
+    }
+  ],
+  "slug": "eng-first-order-settling",
+  "category": "제어",
+  "result_label": "1차계 정착시간 t_s",
+  "result_dimension": "time",
+  "fields": [
+    {
+      "key": "tau",
+      "label": "시정수 τ",
+      "dimension": "time",
+      "example": 1,
+      "constraint": "positive",
+      "display_unit": "s",
+      "display_value": "1"
+    },
+    {
+      "key": "epsilon",
+      "label": "허용 잔류오차 비율 ε",
+      "dimension": "fraction",
+      "example": 0.02,
+      "constraint": "openInterval",
+      "display_unit": "1",
+      "display_value": "0.02"
+    }
+  ],
+  "site": "https://nanalab.kr/eng-first-order-settling/",
+  "repository": "https://github.com/NaNaCompany/eng-first-order-settling",
+  "condition": "",
+  "output_unit": "s"
+}
